@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- google font 字型連結 -->
+
+    <style>
+    
+    *{
+        box-sizing: border-box;
+        /* 自動扣除多餘padding值 */
+    }
+    body{
+        margin: 0;
+    }
+
+    @media screen and (min-width: 1330px){
+        
+        #container{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+        #container-left{
+            background-color: gray;
+            width: 366px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 75px;
+        }
+        #menu-toggle{
+            display: none;
+            /* phone隱藏，因phone的html ul只有1個，menu-toggle是phone版專屬故此版隱藏 */
+        }
+        #logo{
+            width: 150px;
+            height: 150px;
+            background-color: gainsboro;
+            margin-bottom: 60px;
+            border-radius: 10px;
+        }
+        #menu{            
+            width: 200px;
+            height: 150px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 2px;  
+        }
+        #menu:hover{
+            color: blue;            
+        }
+        ul{
+            margin: 0;
+            padding: 0;            
+            display: inline-block; 
+            /* 上下排 */
+        }
+        li{
+            list-style: none;
+            padding: 10px 45px;
+            margin-bottom: 10px;
+            background-color: gainsboro;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.432);
+        }
+        #container-right{            
+            width: calc(100% - 366px);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #all{
+            width: 965px;
+            height: 570px;  
+            display: flex; 
+        } 
+        #boxA{
+            width: calc(33% - 10px);
+            height: 100%; 
+            margin-right: 10px;
+            background-image: url('img/img1.jpg');
+            background-position: center; 
+        }
+        #boxB{
+            width:calc(34% - 10px) ;
+            height: 100%;
+            margin-right: 10px;
+            background-image: url('img/img2.jpg');
+            background-position: center; 
+        }
+        #boxC{
+            width:33% ;
+            height: 100%; 
+            background-image: url('img/img3.jpg');  
+            background-position: center;                     
+        }   
+        .mask{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            transition: 0.7s;         
+        }
+        .mask:hover{            
+            background-color: rgba(0,0,0,0);
+        }     
+        
+        
+    }
+
+    @media screen and (min-width: 1165px) and (max-width: 1330px){
+        
+        #container{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+        #container-left{
+            background-color: gray;
+            width: 366px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 75px;
+        }
+        #menu-toggle{
+            display: none;
+            /* phone隱藏，因phone的html ul只有1個，menu-toggle是phone版專屬故此版隱藏 */
+        }
+        #logo{
+            width: 150px;
+            height: 150px;
+            background-color: gainsboro;
+            margin-bottom: 60px;
+            border-radius: 10px;
+        }
+        #menu{            
+            width: 200px;
+            height: 150px;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #menu:hover{
+            color: blue;            
+        }
+        ul{
+            margin: 0;
+            padding: 0;            
+            display: inline-block; 
+            /* 上下排 */
+        }
+        li{
+            list-style: none;
+            padding: 10px 45px;
+            margin-bottom: 10px;
+            background-color: gainsboro;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.432);
+        }
+        #container-right{            
+            width: calc(100% - 366px);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #all{
+            width: 800px;
+            height: 570px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #boxA{
+            width: 100%;
+            height: calc(50% - 5px);
+            margin-bottom: 10px;
+            background-image: url('img/img1.jpg');
+            background-position: center; 
+        }        
+        #boxB{
+            width:calc(50% - 5px);
+            height: calc(50% - 5px);    
+            margin-right: 10px;
+            background-image: url('img/img2.jpg');
+            background-position: center; 
+        }
+        #boxC{
+            width:calc(50% - 5px) ;
+            height: calc(50% - 5px);  
+            background-image: url('img/img3.jpg');
+            background-position: center;   
+        }    
+        .mask{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            transition: 0.7s;         
+        }
+        .mask:hover{            
+            background-color: rgba(0,0,0,0);
+        } 
+    }
+
+        
+    @media screen and (min-width: 717px) and (max-width: 1165px){
+        #container{
+            width: 100%;
+            height: 100vh;
+        }
+        #container-left{
+            background-color: gray;
+            width: 100%;
+            height: 100px;  
+            display: flex; 
+            justify-content: space-between;    
+            align-items: center; 
+            padding: 0 30px;    
+        }
+        #menu-toggle{
+            display: none;
+            /* phone隱藏，因phone的html ul只有1個，menu-toggle是phone版專屬故此版隱藏 */
+        }
+        #logo{
+            width: 80px;
+            height: 80px;
+            background-color: gainsboro; 
+            border-radius: 10px;
+        }
+        #menu{            
+            width: 470px;
+            height: 50px;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        #menu:hover{
+            color: blue;            
+        }
+        ul{
+            margin: 0;
+            padding:0;   
+        }
+        li{
+            list-style: none;
+            padding: 10px 45px;
+            background-color: gainsboro;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.432);
+        }
+        #container-right{            
+            width: 100%;
+            height: 924px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #all{
+            width: 700px;
+            height: 800px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #boxA{
+            width: 100%;
+            height: calc(50% - 5px);
+            margin-bottom: 10px;
+            background-image: url('img/img1.jpg');
+            background-position: center; 
+        }        
+        #boxB{
+            width:calc(50% - 5px);
+            height: calc(50% - 5px);    
+            margin-right: 10px;
+            background-image: url('img/img2.jpg');
+            background-position: center; 
+        }
+        #boxC{
+            width:calc(50% - 5px) ;
+            height: calc(50% - 5px);  
+            background-image: url('img/img3.jpg');
+            background-position: center;  
+        }  
+        .mask{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            transition: 0.7s;         
+        }
+        .mask:hover{            
+            background-color: rgba(0,0,0,0);
+        } 
+    }
+
+    @media screen and (max-width: 716px){
+        #container{
+            width: 100%;
+            height: 100vh;
+        }
+        #container-left{
+            background-color: gray;
+            width: 100%;
+            height: 80px;  
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+        }
+        #menu-toggle{
+            width: 54px;
+            height: 54px;
+            background-color: gainsboro; 
+            position: absolute;
+            left: 15px;
+            border-radius: 10px;
+        }       
+        #menu-toggle:hover ~ #menu{
+            display: block;
+            /* hover後出現#menu，ul選單出現 */  
+            position: absolute;
+            left: 15px;
+            top: 65px;  
+        }         
+        #logo{
+            width: 54px;
+            height: 54px;
+            background-color: gainsboro;
+            border-radius: 10px;
+        }
+        #menu{
+            /* display: none; */
+            /* menu其他版的html故隱藏，此phone版是menu-toggle*/
+            /* 要用滑入效果就要取消none讓預設在視窗外圍負值 */
+            position: absolute;
+            /* 定位，hover後ul顯示的位置 */
+            left: -200px;
+            /* 放在視窗外圍負值，hover後滑入效果 */
+            top: 65px;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 2px;  
+            transition: 0.5s;            
+        }
+        #menu:hover{
+            /* 選單出現後滑鼠可碰到選單，不會離開menu-toggle後就收折 */
+            display: block;
+            position: absolute;
+            left: 15px;
+            top: 65px;
+            color: blue;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            background-color: gainsboro;
+            padding: 10px 45px;
+            margin-bottom: 5px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.432);
+        }       
+        #container-right{            
+            width: 100%;
+            height: 567px;
+        }
+        #all{
+            width: 100%;
+            height: 150vh;       
+        }        
+        #boxA{
+            width: 100%;
+            height: 50vh;            
+            background-image: url('img/img1.jpg');
+            background-position: center;
+        }
+        #boxB{
+            width:100% ;
+            height: 50vh;
+            background-image: url('img/img2.jpg');
+            background-position: center;
+        }
+        #boxC{
+            width:100% ;
+            height: 50vh;  
+            background-image: url('img/img3.jpg');  
+            background-position: center;                    
+        }
+        .mask{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            transition: 0.7s;         
+        }
+        .mask:hover{            
+            background-color: rgba(0,0,0,0);
+        } 
+    }    
+    
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="container-left">
+        <div id="menu-toggle"></div>
+        <div id="logo"></div>
+        <div id="menu">
+            <ul>
+                <li>AAAAA</li>
+                <li>BBBBB</li>
+                <li>CCCCC</li>
+            </ul>
+        </div>           
+    </div>
+    <div class="class"></div>
+
+    <div id="container-right">
+        <div id="all">         
+            <div id="boxA"><div id="boxA1" class="mask"></div></div>
+            <div id="boxB"><div id="boxA2" class="mask"></div></div>
+            <div id="boxC"><div id="boxA3" class="mask"></div></div>    
+        </div>       
+    </div>
+</div>
+        
+</body>
+</html>
